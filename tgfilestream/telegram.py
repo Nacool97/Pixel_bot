@@ -44,6 +44,8 @@ async def handle_message(evt: events.NewMessage.Event) -> None:
         await evt.reply(start_message)
         return
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
-    await evt.reply(f"Link to download file:{url}"+"\nSupport me @programmer_zone")
+
+    pixel_url = "http://117.195.71.126:81/video?id={}".format(url)
+    await evt.reply(f"Link to download file:{pixel_url}"+"\nSupport me @programmer_zone")
     log.info(f"Replied with link for {evt.id} to {evt.from_id} in {evt.chat_id}")
     log.debug(f"Link to {evt.id} in {evt.chat_id}: {url}")
