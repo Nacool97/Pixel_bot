@@ -45,7 +45,7 @@ async def handle_message(evt: events.NewMessage.Event) -> None:
         return
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
 
-    pixel_url = "http://117.195.71.126:81/video/{}".format(str(url).replace("https://pixeybot.herokuapp.com/", ''))
+    pixel_url = "https://pixeyweb.herokuapp.com/video/{}".format(str(url).replace("https://pixeybot.herokuapp.com/", ''))
     await evt.reply(
         f"Link to stream the file online:{pixel_url}\nLink to download the file:{url}" + "\n\nSupport me "
                                                                                          "✅@programmer_zone")
