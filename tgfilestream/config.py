@@ -45,14 +45,14 @@ debug = bool(os.environ.get("DEBUG"))
 
 try:
     # The per-user ongoing request limit
-    request_limit = int(os.environ.get("REQUEST_LIMIT", "5"))
+    request_limit = int(os.environ.get("REQUEST_LIMIT", "25"))
 except ValueError:
     print("Please make sure the REQUEST_LIMIT environment variable is an integer")
     sys.exit(1)
 
 try:
     # The per-DC connection limit
-    connection_limit = int(os.environ.get("CONNECTION_LIMIT", "20"))
+    connection_limit = int(os.environ.get("CONNECTION_LIMIT", "100"))
 except ValueError:
     print("Please make sure the CONNECTION_LIMIT environment variable is an integer")
     sys.exit(1)
