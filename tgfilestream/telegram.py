@@ -46,8 +46,6 @@ async def handle_message(evt: events.NewMessage.Event) -> None:
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
 
     #pixel_url = "https://pixeyweb.herokuapp.com/video/{}".format(str(url).replace("https://pixeybot.herokuapp.com/", ''))
-    await evt.reply(
-        f"Link to download the file:{url}" + "\n\nSupport me "
-                                                                                         "✅@programmer_zone")
+    await evt.reply(f"Link to download and stream the file:\n{url}" + "\n\nSupport me"+"✅@programmer_zone")
     log.info(f"Replied with link for {evt.id} to {evt.from_id} in {evt.chat_id}")
     log.debug(f"Link to {evt.id} in {evt.chat_id}: {url}")
